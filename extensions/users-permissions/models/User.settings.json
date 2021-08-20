@@ -72,10 +72,6 @@
         "RECRUITER"
       ]
     },
-    "portfolios": {
-      "via": "developer",
-      "collection": "portfolio"
-    },
     "comments": {
       "via": "author",
       "collection": "comment"
@@ -83,6 +79,10 @@
     "likes": {
       "via": "user",
       "collection": "like"
+    },
+    "projects": {
+      "via": "developer",
+      "collection": "project"
     }
   }
 }

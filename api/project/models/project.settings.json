@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Project"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "likesCount": {
+      "type": "integer"
+    },
+    "developer": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "projects"
+    },
+    "comments": {
+      "via": "project",
+      "collection": "comment"
+    },
+    "likes": {
+      "via": "project",
+      "collection": "like"
+    }
+  }
+}

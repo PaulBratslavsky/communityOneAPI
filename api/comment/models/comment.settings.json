@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "comments",
   "info": {
-    "name": "Comment"
+    "name": "Comment",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,13 +16,13 @@
       "type": "text"
     },
     "author": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "comments"
-    },
-    "portfolio": {
       "via": "comments",
-      "model": "portfolio"
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "project": {
+      "model": "project",
+      "via": "comments"
     }
   }
 }
