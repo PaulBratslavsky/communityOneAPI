@@ -21,8 +21,8 @@
       "model": "user"
     },
     "project": {
-      "model": "project",
-      "via": "comments"
+      "via": "comments",
+      "model": "project"
     }
   }
 }

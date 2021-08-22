@@ -18,8 +18,8 @@
       "model": "user"
     },
     "project": {
-      "model": "project",
-      "via": "likes"
+      "via": "likes",
+      "model": "project"
     }
   }
 }
