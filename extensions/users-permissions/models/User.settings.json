@@ -83,6 +83,16 @@
     "projects": {
       "via": "developer",
       "collection": "project"
+    },
+    "avatarImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
