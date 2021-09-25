@@ -13,20 +13,28 @@ module.exports = {
 
         if (!user) return null
 
-        const { portfolio: portfolioID } = ctx.request.body;
+        const { project: projectID } = ctx.request.body;
 
-        const portfolio = await strapi.services.portfolio.findOne({ id: portfolioID })
-        if (!portfolio) ctx.throw(400, "Post does not exist!")
+        const project = await strapi.services.project.findOne({ id: projectID })
+        if (!project) ctx.throw(400, "Post does not exist!")
 
-        const alreadyLiked = await strapi.services.like.findOne({ user: user.id, portfolio: portfolioID })
-        if (alreadyLiked) ctx.throw(400, "Already liked post!")
+        const ifLiked = await strapi.services.like.findOne({ user: user.id, project: projectID })
 
-        const id = { id: portfolioID }
-        const data = { likesCount: portfolio.likesCount + 1 }
+        if (ifLiked) {
+            const id = { id: projectID }
+            const data = { likesCount: project.likesCount - 1 }
+            await strapi.services.project.update(id,data)
 
-        await strapi.services.portfolio.update(id,data)
+            const entity = await strapi.services.like.delete({ id: ifLiked.id });
+            return sanitizeEntity(entity, { model: strapi.models.like });
+        } else {
+            const id = { id: projectID }
+            const data = { likesCount: project.likesCount + 1 }
+            await strapi.services.project.update(id,data)
 
-        const entity = await strapi.services.like.create({ portfolio: portfolioID, user });
-        return sanitizeEntity(entity, { model: strapi.models.like });
+            const entity = await strapi.services.like.create({ project: projectID, user });
+            return sanitizeEntity(entity, { model: strapi.models.like });
+        }
+        
     },
 };
