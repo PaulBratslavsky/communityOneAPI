@@ -93,7 +93,9 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-
+    },
+    "linkedIn": {
+      "type": "string"
     },
     "gitHub": {
       "type": "string"
