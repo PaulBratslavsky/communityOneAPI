@@ -93,6 +93,19 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+
+    },
+    "gitHub": {
+      "type": "string"
+    },
+    "resume": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "youTube": {
+      "type": "string"
     }
   }
 }
