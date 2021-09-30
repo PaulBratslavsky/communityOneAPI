@@ -49,6 +49,13 @@
     },
     "siteUrl": {
       "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "DRAFT",
+        "PUBLISH"
+      ]
     }
   }
 }
