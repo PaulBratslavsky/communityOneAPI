@@ -17,7 +17,8 @@ module.exports = {
     } else {
       entity = await strapi.services.project.create({ ...ctx.request.body, likesCount: 0, developer: id });
     }
-    return sanitizeEntity(entity, { model: strapi.project.restaurant });
+    return sanitizeEntity(entity, { model: strapi.models.project });
+
   },
 };
  
