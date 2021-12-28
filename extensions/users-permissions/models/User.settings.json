@@ -112,6 +112,10 @@
     "posts": {
       "via": "author",
       "collection": "post"
+    },
+    "issues": {
+      "via": "assignee",
+      "collection": "issue"
     }
   }
 }

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "issue_s",
+  "info": {
+    "name": "Issue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "createdBy": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "BUG",
+        "FEATURE",
+        "TODO"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "IMMEDIATE",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "severity": {
+      "type": "enumeration",
+      "enum": [
+        "CRITICAL",
+        "MAJOR",
+        "MODERATE",
+        "LOW"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "NEW",
+        "OPEN",
+        "CLOSED"
+      ]
+    },
+    "issueBrief": {
+      "type": "string"
+    },
+    "assignee": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "issues"
+    },
+    "dueDate": {
+      "type": "date"
+    },
+    "project": {
+      "model": "project",
+      "via": "issues"
+    },
+    "isPrivate": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
