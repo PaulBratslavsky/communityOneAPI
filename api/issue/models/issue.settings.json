@@ -57,9 +57,9 @@
       "type": "string"
     },
     "assignee": {
+      "via": "issues",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "issues"
+      "model": "user"
     },
     "dueDate": {
       "type": "date"

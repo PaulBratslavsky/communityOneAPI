@@ -116,6 +116,9 @@
     "issues": {
       "via": "assignee",
       "collection": "issue"
+    },
+    "bio": {
+      "type": "text"
     }
   }
 }
