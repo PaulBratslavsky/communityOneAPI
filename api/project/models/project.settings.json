@@ -56,6 +56,10 @@
         "DRAFT",
         "PUBLISH"
       ]
+    },
+    "issues": {
+      "via": "project",
+      "collection": "issue"
     }
   }
 }
