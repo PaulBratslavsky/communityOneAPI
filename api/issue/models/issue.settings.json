@@ -62,7 +62,7 @@
       "model": "user"
     },
     "dueDate": {
-      "type": "date"
+      "type": "datetime"
     },
     "project": {
       "model": "project",
