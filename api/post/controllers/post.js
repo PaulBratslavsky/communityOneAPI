@@ -17,13 +17,13 @@ module.exports = {
   },
 
   async findOwnedPosts(ctx) {
-    const { user } = ctx.state.user;
+    const { user } = ctx.state;
     console.log(user, "########## user ##########");
     if (!user) return null;
-    // const entities = await strapi.services.post.find();
-    // return entities.map((entity) =>
-    //   sanitizeEntity(entity, { model: strapi.models.post })
-    // );
+    const entities = await strapi.services.post.find({ author: user.id });
+    return entities.map((entity) =>
+      sanitizeEntity(entity, { model: strapi.models.post })
+    );
     return null;
   },
 };
