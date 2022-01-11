@@ -25,6 +25,14 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/posts/ownedPosts",
+      "handler": "post.findOwnedPosts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
       "path": "/posts",
       "handler": "post.create",
