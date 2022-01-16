@@ -1,0 +1,14 @@
+{
+  "collectionName": "import_assets",
+  "info": {
+    "name": "import-assets",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {}
+}
