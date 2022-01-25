@@ -9,6 +9,22 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/import-assets/preAnalyzeContent",
+      "handler": "import-assets.preAnalyzeContent",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/import-assets/content-types",
+      "handler": "import-assets.getContentTypes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/import-assets",
       "handler": "import-assets.find",
