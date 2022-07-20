@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "likesCount": {
+      "type": "integer"
+    },
+    "developer": {
+      "via": "projects",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "comments": {
+      "via": "project",
+      "collection": "comment"
+    },
+    "likes": {
+      "via": "project",
+      "collection": "like"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "gitUrl": {
+      "type": "string"
+    },
+    "siteUrl": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "DRAFT",
+        "PUBLISH"
+      ]
+    },
+    "issues": {
+      "via": "project",
+      "collection": "issue"
+    }
+  }
+}
