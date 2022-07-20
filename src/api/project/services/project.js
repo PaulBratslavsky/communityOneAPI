@@ -1,14 +1,3 @@
 'use strict';
-
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-services)
- * to customize this service
- */
-
-module.exports = (
- {
-  strapi
- }
-) => {
- return {};
-};
+const { createCoreController } = require('@strapi/strapi').factories;
+module.exports = createCoreController('api::project.project');
