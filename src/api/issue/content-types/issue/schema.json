@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "issue_s",
+  "info": {
+    "singularName": "issue",
+    "pluralName": "issues",
+    "displayName": "Issue",
+    "name": "issue"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "createdBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "BUG",
+        "FEATURE",
+        "TODO"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "IMMEDIATE",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "severity": {
+      "type": "enumeration",
+      "enum": [
+        "CRITICAL",
+        "MAJOR",
+        "MODERATE",
+        "LOW"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "NEW",
+        "OPEN",
+        "CLOSED"
+      ]
+    },
+    "issueBrief": {
+      "type": "string"
+    },
+    "assignee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "issues"
+    },
+    "dueDate": {
+      "type": "datetime"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "issues"
+    },
+    "isPrivate": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
