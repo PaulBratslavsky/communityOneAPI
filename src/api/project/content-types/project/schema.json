@@ -5,7 +5,8 @@
     "singularName": "project",
     "pluralName": "projects",
     "displayName": "Project",
-    "name": "project"
+    "name": "project",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,9 +20,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "likesCount": {
-      "type": "integer"
     },
     "developer": {
       "type": "relation",
@@ -43,11 +41,11 @@
     },
     "featuredImage": {
       "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "multiple": false,
-      "required": false
+      ]
     },
     "gitUrl": {
       "type": "string"
